@@ -1,6 +1,7 @@
 .venv/
 
-notebooks/catboost_info/
+catboost_info/
 
 __pycache__/
 .ipynb_checkpoints/
+output.csv
