@@ -19,7 +19,7 @@ config = {
         "shuffle": True,
     },
     "preprocessing": {
-        "cat_features": ["Embarked", "Title", "Deck"],  # для CatBoost, ohe_features — для остальных
+        "cat_features": ["Embarked", "Title", "Deck"],
     },
     "training": {
         "dummy": {
@@ -27,13 +27,12 @@ config = {
         },
         "logreg": {
             "C": 0.023101,
-            "l1_ratio": 0.2,
             "solver": "lbfgs",
             "max_iter": 2000,
         },
         "knn": {
             "n_neighbors": 6,       
-            "weights": "uniform ",
+            "weights": "uniform",
             "metric": "manhattan",
             "p": 2,
         },
@@ -90,7 +89,6 @@ config = {
         },
         "stacking": {
             "meta_members": ["lr", "tree", "rf", "lgbm", "xgb", "cb"],
-            "penalty": "l2",
             "C": 1.0,
         },
     },

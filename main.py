@@ -48,10 +48,10 @@ def main():
     with open(config.paths.path_to_metrics, "w") as f:
         json.dump(stats, f, indent=2)
 
-    print("\nМетрики (honest OOF / CV accuracy):")
+    print("\nMetrics (OOF / CV accuracy):")
     for name, acc in sorted(stats.items(), key=lambda x: x[1], reverse=True):
-        print(f"  {name:<22} {acc:.4f}")
-    print(f"\nСабмит сохранён в {config.paths.path_to_submission}")
+        print(f"{name:<10} {acc:.4f}")
+    print(f"\nSUBMIT SAVED IN \'{config.paths.path_to_submission}\'")
 
 
 if __name__ == "__main__":

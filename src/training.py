@@ -33,7 +33,7 @@ def run_model(name, estimator, X, y, cv, needs_scaling=False, fit_params=None, s
     acc = accuracy_score(y, (oof_proba >= 0.5).astype(int))
     if stats is not None:
         stats[name] = acc
-    print(f"{name}: OOF accuracy = {acc:.4f} | по фолдам: {np.mean(fold_scores):.4f} ± {np.std(fold_scores):.4f}")
+    print(f"{name:<5}: OOF accuracy = {acc:.4f} │ by folds: {np.mean(fold_scores):.4f} ± {np.std(fold_scores):.4f}")
 
     scaler_full = StandardScaler().fit(X) if needs_scaling else None
     X_full = scaler_full.transform(X) if scaler_full else X

@@ -21,7 +21,7 @@ def fit_stacking(results: dict, y, cv, stacking_cfg):
     members = list(stacking_cfg.meta_members)
     X_meta_train = pd.DataFrame({name: results[name]["oof_proba"] for name in members})
 
-    meta_model = LogisticRegression(max_iter=1000, C=stacking_cfg.C, penalty=stacking_cfg.penalty)
+    meta_model = LogisticRegression(max_iter=1000, C=stacking_cfg.C)
     meta_cv_scores = cross_val_score(meta_model, X_meta_train, y, cv=cv, scoring="accuracy")
     meta_model.fit(X_meta_train, y)
 
